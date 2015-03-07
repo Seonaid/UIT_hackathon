@@ -75,6 +75,12 @@ router.post('/story', function(req, res){
 	});
 });
 
+router.post('/add_connect', function(req, res){
+	console.log(req.body.title);
+
+	var sql = "SELECT * FROM story WHERE id"
+});
+
 
 // retrieve stories by category
 router.get('/:id', function(req, res){
