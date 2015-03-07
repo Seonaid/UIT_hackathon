@@ -2,17 +2,23 @@ extends layout
 
 block content
 
-	.quote= quote
+	.topstuff
+		.quote= quote
 
-	a(href="/gender"): img(src='/images/gender.png')
-	a(href="/family"): img(src='/images/family.png')
-	a(href="/education"): img(src='/images/education.png')
-	a(href="/social"): img(src='/images/social.png')
-	a(href="/self"): img(src='/images/image.png')
+		a(href="/gender"): img(src='/images/gender.png')
+		a(href="/family"): img(src='/images/family.png')
+		a(href="/education"): img(src='/images/education.png')
+		a(href="/social"): img(src='/images/social.png')
+		a(href="/self"): img(src='/images/image.png')
 
-	p:  a(href = "/story") Add a story?
+	.floatleft:  a(href = "/story") Add a story?
 
+	hr
+	h2= category
+
+	
 	if stories
+		.stories
 		for story in stories
 			h2= story.title
 			p= story.text

@@ -65,7 +65,7 @@ router.post('/story', function(req, res){
 		}
 
 		res.statusCode = 201;
-		res.render('index', {title: 'TeensConnect', quote: '"Invisible threads are the strongest ties" -Anonymous', stories : result.rows});
+		res.render('index', {title: 'TeensConnect', quote: '"Invisible threads are the strongest ties" -Anonymous'});
 
 
 
@@ -83,16 +83,28 @@ router.get('/:id', function(req, res){
 	var sql = "SELECT * FROM story WHERE category =  '" + req.params.id + "'";
 	var data = req.params.id;
 	var quote = "";
+	var category = "";
 
 	switch(req.params.id){
 		case "gender":
 			quote = '"If Harry Potter taught us anything, it\'s that no one should live in a closet." -Anonymous';
+			category = "Gender and Sex";
 			break;
 		case "education":
 			quote = '"Education is not preparation for life; education is life itself." -Anonymous';
+			category = "Educational Options";
 			break;
 		case "family":
 			quote = '"Keep your heads up.  The universe gives its hardest battles to its strongest soldiers." -Anonymous';
+			category = "Friends and Family";
+			break;
+		case "social":
+			quote = '"Don\'t give up because of what someone says, use that as motivation to push harder" -Anonymous';
+			category = "Social Pressures";
+			break;
+		case "self":
+			quote = '"The best impression is your own impression." -Anonymous';
+			category = "Self and Body Image";
 			break;
 	}
 
@@ -107,7 +119,7 @@ router.get('/:id', function(req, res){
 		if(result.rows){
 			console.log('Results are ' + result.rows);
 			res.statusCode = 201;
-			res.render('index', {title: 'TeensConnect ', quote: quote, stories: result.rows});
+			res.render('index', {title: 'TeensConnect ', category: category, quote: quote, stories: result.rows});
 		} else {
 			res.render('story');
 		}
