@@ -6,4 +6,17 @@ block content
 	form(method = "post", action = "/story")
 		p: input(type = "text", placeholder = "Title", name = "title")
 		p: textarea(placeholder = "Tell your story here.", name ="story")
+
+		p gender and sex
+			input(type="radio", name="category", value="gender") 
+		p family and friends
+			input(type="radio", name="category", value="friends")
+		p education options
+			input(type="radio", name="category", value="education")
+		p social pressures
+			input(type="radio", name="category", value="social")
+		p self/body image
+			input(type="radio", name="category", value="self")
+
+
 		p: button Submit
