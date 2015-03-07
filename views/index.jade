@@ -12,6 +12,7 @@ block content
 		a(href="/self"): img(src='/images/image.png')
 
 	.floatleft:  a(href = "/story") Add a story?
+	br
 
 	hr
 	h2= category
@@ -22,3 +23,9 @@ block content
 		for story in stories
 			h2= story.title
 			p= story.text
+			if story.connects
+				p= story.connects
+			button.connect(data-name=story.title) Connect
+
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js")
+	script(src="/javascripts/client.js")
