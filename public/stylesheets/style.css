@@ -11,3 +11,44 @@ textarea {
 	width: 400px;
 	height: 400px;
 }
+
+#tabs {
+	text-align: center;
+	padding-top: 70px;
+}
+
+.menu {
+	padding: 30px;
+}
+
+.quote { 
+	padding-top: 20px;
+	color: #77369E;
+	text-align: center;
+	font-family: 'Snell Roundhand';
+	font-size: 40pt;
+}
+
+#gender {
+	padding-top: 20px;
+	color: #77369E;
+	text-align: center;
+	font-family: 'Snell Roundhand';
+	font-size: 40pt;
+}
+
+#family {
+	padding-top: 20px;
+	color: #77369E;
+	text-align: center;
+	font-family: 'Snell Roundhand';
+	font-size: 40pt;
+}
+
+#education {
+	padding-top: 20px;
+	color: #77369E;
+	text-align: center;
+	font-family: 'Snell Roundhand';
+	font-size: 40pt;
+}
