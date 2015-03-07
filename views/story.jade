@@ -4,6 +4,6 @@ block content
 	h1 Add a story?
 
 	form(method = "post", action = "/story")
-		p: input(type = "text", placeholder = "Title")
-		p: textarea(placeholder = "Tell your story here.")
+		p: input(type = "text", placeholder = "Title", name = "title")
+		p: textarea(placeholder = "Tell your story here.", name ="story")
 		p: button Submit
