@@ -8,7 +8,23 @@ console.log(postgres);
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'ConnecTeen' });
+
+  var sql = 'SELECT * FROM story';
+  postgres.client.query(sql, function(err, result){
+  	if(err){
+		res.statusCode = 500;
+		return res.json({
+			errors: ['Could not retrieve any stories from database']
+		});
+	}
+
+	res.statusCode= 201;
+	res.render('index', {title: 'ConnecTEEN',  stories : result.rows});
+
+
+
+  });
+
 });
 
 router.get('/story', function(req, res){
@@ -39,9 +55,21 @@ router.post('/story', function(req, res){
 			});
 		}
 
-		res.statusCode = 201;
+	  var sql = 'SELECT * FROM story';
+	  postgres.client.query(sql, function(err, result){
+	  	if(err){
+			res.statusCode = 500;
+			return res.json({
+				errors: ['Could not retrieve any stories from database']
+			});
+		}
 
-		res.render('index', {title: 'Success!'});
+		res.statusCode= 201;
+		res.render('index', {title: 'ConnecTEEN',  stories : result.rows});
+
+
+
+	  });
 
 		});
 	});

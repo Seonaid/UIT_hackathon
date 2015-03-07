@@ -7,3 +7,6 @@ block content
 	a(href = "/story") Add a story?
 
 
+	for story in stories
+		h2= story.title
+		p= story.text
